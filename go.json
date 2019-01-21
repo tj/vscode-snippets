@@ -1,0 +1,328 @@
+{
+  "Print": {
+    "prefix": "p",
+    "description": "Print",
+    "body": [
+      "fmt.Printf(\"%#v\\n\", $1)"
+    ]
+  },
+  
+  "Append": {
+    "prefix": "a",
+    "description": "Append",
+    "body": [
+      "$1 = append($1, $0)"
+    ]
+  },
+
+  "To-do": {
+    "prefix": "todo",
+    "description": "To-do item",
+    "body":[
+      "// TODO: $1"
+    ]
+  },
+
+  "Method": {
+    "prefix": "m",
+    "body": [
+      "// $3 ${4:implementation}",
+      "func ($1 *$2) $3($5) $6 {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "Method Chained": {
+    "prefix": "mc",
+    "body": [
+      "// $3 ${4:implementation}",
+      "func ($1 *$2) $3($5) $6 {",
+      "  $0",
+      "  return $1",
+      "}"
+    ]
+  },
+
+  "Sprintf": {
+    "prefix": "ss",
+    "body": [
+      "fmt.Sprintf(\"$1\", $0)"
+    ]
+  },
+
+  "If Error": {
+    "prefix": "e",
+    "body": [
+      "if err != nil {",
+      "  return $0",
+      "}"
+    ]
+  },
+
+  "If Error Oneliner": {
+    "prefix": "ie",
+    "body": [
+      "if err := $1; err != nil {",
+      "  return $0",
+      "}"
+    ]
+  },
+
+  "Error Wrap": {
+    "prefix": "ew",
+    "body": [
+      "errors.Wrap(err, \"$0\")"
+    ]
+  },
+
+  "Error Wrapf": {
+    "prefix": "ewf",
+    "body": [
+      "errors.Wrapf(err, \"$1\", $0)"
+    ]
+  },
+
+  "Return Nil": {
+    "prefix": "ni",
+    "body": [
+      "return nil"
+    ]
+  },
+
+  "Time Duration": {
+    "prefix": "td",
+    "body": [
+      "time.Duration"
+    ]
+  },
+
+
+  "Testing TB": {
+    "prefix": "tb",
+    "body": [
+      "t testing.TB"
+    ]
+  },
+
+  "Time Now": {
+    "prefix": "now",
+    "body": [
+      "time.Now()"
+    ]
+  },
+
+  "Time Start": {
+    "prefix": "st",
+    "body": [
+      "start := time.Now()"
+    ]
+  },
+
+  "Time Since": {
+    "prefix": "ts",
+    "body": [
+      "time.Since(${1:start})"
+    ]
+  },
+
+  "Assert Equal": {
+    "prefix": "ae",
+    "body": [
+      "assert.Equal(t, ${1:expected}, ${2:actual})"
+    ]
+  },
+
+  "Assert Equal": {
+    "prefix": "aee",
+    "body": [
+      "assert.EqualError(t, ${1:err}, `${2:msg}`)"
+    ]
+  },
+
+  "Map": {
+    "prefix": "ma",
+    "body": [
+      "map[${1:string}]${0:value}"
+    ]
+  },
+
+  "HTTP Error": {
+    "prefix": "he",
+    "body": [
+      "http.Error(w, \"$1\", http.Status$2)"
+    ]
+  },
+
+  "HTTP Handler": {
+    "prefix": "ha",
+    "body": [
+      "w http.ResponseWriter, r *http.Request"
+    ]
+  },
+
+  "Hex Dump": {
+    "prefix": "hd",
+    "body": [
+      "fmt.Printf(\"%s\\\\n\", hex.Dump($1))"
+    ]
+  },
+
+  "Tag": {
+    "prefix": "tag",
+    "body": [
+      "`$1:\"$2\"`"
+    ]
+  },
+
+  "Bytes": {
+    "prefix": "b",
+    "body": [
+      "[]byte($1)"
+    ]
+  },
+  
+  "Main": {
+    "prefix": "main",
+    "body": [
+      "func main(){",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "Function": {
+    "prefix": "f",
+    "body": [
+      "// $1 $2.",
+      "func $1($3) $4 {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "Function Anonymous": {
+    "prefix": "ff",
+    "body": [
+      "func ($1) $2 {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "Struct": {
+    "prefix": "s",
+    "body": [
+      "// $1 $2.",
+      "type $1 struct {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "Struct Field": {
+    "prefix": "sf",
+    "body": [
+      "// $1 $3.",
+      "${1:Name} ${2:string}"
+    ]
+  },
+
+  "Hex Dump Reader": {
+    "prefix": "hdr",
+    "body": [
+      "{",
+      "  b, err := ioutil.ReadAll($0)",
+      "  if err != nil {",
+      "    panic(err)",
+      "  }",
+      "",
+      "  fmt.Printf(\"%s\\\\n\", hex.Dump(b))",
+      "}"
+    ]
+  },
+
+  "Interface": {
+    "prefix": "i",
+    "body": [
+      "// $1 $2.",
+      "type $1 interface {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "New Constructor": {
+    "prefix": "n",
+    "body": [
+      "// New $2.",
+      "func New($3) *$1 {",
+      "  return &$1{",
+      "    $0",
+      "  }",
+      "}"
+    ]
+  },
+
+  "Inspect As JSON": {
+    "prefix": "ij",
+    "body": [
+      "{",
+      "  enc := json.NewEncoder(os.Stderr)",
+      "  enc.SetIndent(\"\", \"  \")",
+      "  enc.Encode($0)",
+      "}"
+    ],
+  },
+
+  "For Range": {
+    "prefix": "fr",
+    "body": [
+      "for _, $2 := range $1 {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "Config": {
+    "prefix": "config",
+    "body": [
+      "// Config options.",
+      "type Config struct {",
+      "  $0",
+      "}",
+      "",
+      "// $1 $2",
+      "type $1 struct {",
+      "  Config",
+      "}",
+      "",
+      "// New $3 with the given config.",
+      "func New(c Config) *$1 {",
+      "  return &$1{",
+      "    Config: c,",
+      "  }",
+      "}"
+    ]
+  },
+
+  "Benchmark Function": {
+    "prefix": "bench",
+    "body": [
+      "func Benchmark$1(b *testing.B) {",
+      "  for i := 0; i < b.N; i++ {",
+      "    $0",
+      "  }",
+      "}"
+    ]
+  },
+
+  "Test Function": {
+    "prefix": "t",
+    "body": [
+      "func Test$1(t *testing.T) {",
+      "  $0",
+      "}"
+    ],
+  }
+}
