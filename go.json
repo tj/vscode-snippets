@@ -9,7 +9,7 @@
   "log.Printf": {
     "prefix": "l",
     "body": [
-      "log.Printf(\"%s\\n\", $1)"
+      "log.Printf(\"$1\\n\", $2)"
     ]
   },
   
