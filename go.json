@@ -75,7 +75,7 @@
     "prefix": "ie",
     "body": [
       "if err := $1; err != nil {",
-      "  return $0",
+      "  $0",
       "}"
     ]
   },
@@ -98,6 +98,13 @@
     "prefix": "r",
     "body": [
       "return"
+    ]
+  },
+
+  "Return Error": {
+    "prefix": "re",
+    "body": [
+      "return err"
     ]
   },
 
