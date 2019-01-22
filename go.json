@@ -1,15 +1,20 @@
 {
-  "Print": {
+  "fmt.Printf": {
     "prefix": "p",
-    "description": "Print",
     "body": [
       "fmt.Printf(\"%#v\\n\", $1)"
+    ]
+  },
+
+  "log.Printf": {
+    "prefix": "l",
+    "body": [
+      "log.Printf(\"%s\\n\", $1)"
     ]
   },
   
   "Append": {
     "prefix": "a",
-    "description": "Append",
     "body": [
       "$1 = append($1, $0)"
     ]
@@ -17,7 +22,6 @@
 
   "To-do": {
     "prefix": "todo",
-    "description": "To-do item",
     "body":[
       "// TODO: $1"
     ]
