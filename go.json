@@ -12,6 +12,13 @@
       "log.Printf(\"$1\\n\", $2)"
     ]
   },
+
+  "log.Fatalf": {
+    "prefix": "fa",
+    "body": [
+      "log.Fatalf(\"error: %s\\n\", ${1:err})"
+    ]
+  },
   
   "Append": {
     "prefix": "a",
@@ -30,7 +37,7 @@
   "Method": {
     "prefix": "m",
     "body": [
-      "// $3 ${4:implementation}",
+      "// $3 ${4:implementation}.",
       "func ($1 *$2) $3($5) $6 {",
       "  $0",
       "}"
@@ -40,7 +47,7 @@
   "Method Chained": {
     "prefix": "mc",
     "body": [
-      "// $3 ${4:implementation}",
+      "// $3 ${4:implementation}.",
       "func ($1 *$2) $3($5) $6 {",
       "  $0",
       "  return $1",
@@ -239,6 +246,13 @@
     ]
   },
 
+  "Context Argument": {
+    "prefix": "con",
+    "body": [
+      "ctx context.Context"
+    ]
+  },
+
   "Context Background": {
     "prefix": "cb",
     "body": [
@@ -267,6 +281,14 @@
       "type $1 interface {",
       "  $0",
       "}"
+    ]
+  },
+
+  "Lock & Unlock": {
+    "prefix": "lo",
+    "body": [
+      "$1.Lock()",
+      "defer $1.Unlock()"
     ]
   },
 
