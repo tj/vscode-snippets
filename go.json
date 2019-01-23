@@ -109,7 +109,7 @@
   },
 
   "Return Nil": {
-    "prefix": "ni",
+    "prefix": "n",
     "body": [
       "return nil"
     ]
@@ -300,7 +300,7 @@
   },
 
   "New Constructor": {
-    "prefix": "n",
+    "prefix": "ne",
     "body": [
       "// New $2.",
       "func New($3) *$1 {",
