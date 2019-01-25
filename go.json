@@ -164,7 +164,7 @@
     ]
   },
 
-  "Assert Equal": {
+  "Assert Error Equal": {
     "prefix": "aee",
     "body": [
       "assert.EqualError(t, ${1:err}, `${2:msg}`)"
