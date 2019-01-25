@@ -34,6 +34,13 @@
     ]
   },
 
+  "Float64": {
+    "prefix": "fl",
+    "body": [
+      "float64($0)"
+    ]
+  },
+
   "Method": {
     "prefix": "m",
     "body": [
@@ -122,7 +129,6 @@
     ]
   },
 
-
   "Testing TB": {
     "prefix": "tb",
     "body": [
@@ -162,6 +168,13 @@
     "prefix": "aee",
     "body": [
       "assert.EqualError(t, ${1:err}, `${2:msg}`)"
+    ]
+  },
+
+  "Assert No Error": {
+    "prefix": "no",
+    "body": [
+      "assert.NoError(t, err, \"$0\")"
     ]
   },
 
@@ -367,6 +380,7 @@
   "Test Function": {
     "prefix": "t",
     "body": [
+      "// $2.",
       "func Test$1(t *testing.T) {",
       "  $0",
       "}"
