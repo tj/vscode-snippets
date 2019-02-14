@@ -4,7 +4,7 @@
     "body": [
       "// Option function.",
       "type Option func(*$1)",
-
+      "",
       "// New $2 with the given options.",
       "func New(options ...Option) *$1 {",
       "  var v $1",
@@ -19,7 +19,7 @@
   "option": {
     "prefix": "o",
     "body": [
-      "// With$1 option.",
+      "// With$1 option$4.",
       "func With$1($2) Option {",
       "  return func(v *$3) {",
       "    $0",
