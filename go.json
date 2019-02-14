@@ -1,4 +1,13 @@
 {
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if v, ok := $1; ok {",
+      "  $0",
+      "}"
+    ]
+  },
+
   "options": {
     "prefix": "options",
     "body": [
@@ -32,6 +41,13 @@
     "prefix": "l",
     "body": [
       "fmt.Printf(\"%#v\\n\", $0)"
+    ]
+  },
+
+  "delete": {
+    "prefix": "d",
+    "body": [
+      "delete($1, \"$2\")"
     ]
   },
 
@@ -73,7 +89,7 @@
   "To-do": {
     "prefix": "todo",
     "body":[
-      "// TODO: $1"
+      "// TODO: $0"
     ]
   },
 
