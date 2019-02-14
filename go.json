@@ -28,17 +28,17 @@
     ]
   },
 
-  "fmt.Printf": {
-    "prefix": "p",
+  "inspect": {
+    "prefix": "l",
     "body": [
       "fmt.Printf(\"%#v\\n\", $0)"
     ]
   },
 
-  "log.Printf": {
-    "prefix": "l",
+  "print": {
+    "prefix": "p",
     "body": [
-      "log.Printf(\"$1\\n\", $0)"
+      "fmt.Printf(\"$1\\n\", $0)"
     ]
   },
 
