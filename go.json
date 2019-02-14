@@ -1,4 +1,33 @@
 {
+  "options": {
+    "prefix": "options",
+    "body": [
+      "// Option function.",
+      "type Option func(*$1)",
+
+      "// New $2 with the given options.",
+      "func New(options ...Option) *$1 {",
+      "  var v $1",
+      "  for _, o := range options {",
+      "     o(&v)",
+      "  }",
+      "  return &v",
+      "}"
+    ]
+  },
+
+  "option": {
+    "prefix": "o",
+    "body": [
+      "// With$1 option.",
+      "func With$1($2) Option {",
+      "  return func(v *$3) {",
+      "    $0",
+      "  }",
+      "}"
+    ]
+  },
+
   "fmt.Printf": {
     "prefix": "p",
     "body": [
@@ -403,7 +432,7 @@
   "Test Function": {
     "prefix": "t",
     "body": [
-      "// $2.",
+      "// Test $2.",
       "func Test$1(t *testing.T) {",
       "  $0",
       "}"
