@@ -44,24 +44,17 @@
     ]
   },
 
-  "print": {
-    "prefix": "pp",
-    "body": [
-      "fmt.Printf(\"$1\\n\", $0)"
-    ]
-  },
-
-  "inspect": {
+  "fmt.Printf": {
     "prefix": "p",
     "body": [
-      "fmt.Printf(\"%#v\\n\", $0)"
+      "fmt.Printf(\"${1:%#v}\\n\", $0)"
     ]
   },
 
   "log.Printf": {
     "prefix": "l",
     "body": [
-      "log.Printf(\"$1\\n\", $0)"
+      "log.Printf(\"${1:%v}\\n\", $0)"
     ]
   },
 
