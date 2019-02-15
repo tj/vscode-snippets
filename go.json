@@ -28,19 +28,12 @@
   "option": {
     "prefix": "o",
     "body": [
-      "// With$1 option$4.",
+      "// With$1 $0.",
       "func With$1($2) Option {",
-      "  return func(v *$3) {",
-      "    $0",
+      "  return func($3) {",
+      "    $4",
       "  }",
       "}"
-    ]
-  },
-
-  "inspect": {
-    "prefix": "l",
-    "body": [
-      "fmt.Printf(\"%#v\\n\", $0)"
     ]
   },
 
@@ -52,9 +45,23 @@
   },
 
   "print": {
-    "prefix": "p",
+    "prefix": "pp",
     "body": [
       "fmt.Printf(\"$1\\n\", $0)"
+    ]
+  },
+
+  "inspect": {
+    "prefix": "p",
+    "body": [
+      "fmt.Printf(\"%#v\\n\", $0)"
+    ]
+  },
+
+  "log.Printf": {
+    "prefix": "l",
+    "body": [
+      "log.Printf(\"$1\\n\", $0)"
     ]
   },
 
