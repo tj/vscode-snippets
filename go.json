@@ -1,8 +1,15 @@
 {
+  "db": {
+    "prefix": "db",
+    "body": [
+      "db *sqlx.DB"
+    ]
+  },
+
   "if": {
     "prefix": "if",
     "body": [
-      "if v, ok := $1; ok {",
+      "if ${2:v}, ok := $1; ok {",
       "  $0",
       "}"
     ]
@@ -34,6 +41,29 @@
       "    $4",
       "  }",
       "}"
+    ]
+  },
+
+  "log error": {
+    "prefix": "le",
+    "body": [
+      "logs.WithError(err).Error(\"$1\")"
+    ]
+  },
+
+  "log info": {
+    "prefix": "li",
+    "body": [
+      "logs.Info(\"$1\")"
+    ]
+  },
+
+  "log with fields": {
+    "prefix": "lw",
+    "body": [
+      "logs.WithFields(log.Fields{",
+      "  $0",
+      "})"
     ]
   },
 
@@ -105,6 +135,16 @@
     "body": [
       "// $3 ${4:implementation}.",
       "func ($1 *$2) $3($5) $6 {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "Method Copy": {
+    "prefix": "mm",
+    "body": [
+      "// $3 ${4:implementation}.",
+      "func ($1 $2) $3($5) $6 {",
       "  $0",
       "}"
     ]
@@ -226,14 +266,14 @@
   "Assert Error Equal": {
     "prefix": "aee",
     "body": [
-      "assert.EqualError(t, ${1:err}, `${2:msg}`)"
+      "assert.EqualError(t, ${1:err}, `${0:msg}`)"
     ]
   },
 
   "Assert No Error": {
     "prefix": "no",
     "body": [
-      "assert.NoError(t, err, \"$0\")"
+      "assert.NoError(t, err${1:, \"$0\"})"
     ]
   },
 
@@ -437,6 +477,7 @@
   "Benchmark Function": {
     "prefix": "bench",
     "body": [
+      "// Benchmark $2.",
       "func Benchmark$1(b *testing.B) {",
       "  for i := 0; i < b.N; i++ {",
       "    $0",
@@ -453,6 +494,15 @@
       "  $0",
       "}"
     ],
+  },
+
+  "Test Case": {
+    "prefix": "tr", 
+    "body": [
+      "t.Run(\"$1\", func(t *testing.T){",
+      "  $0",
+      "})"
+    ]
   },
 
   "VDOM Attributes": {
