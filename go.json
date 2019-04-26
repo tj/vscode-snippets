@@ -1,4 +1,17 @@
 {
+  "string enum": {
+    "prefix": "string-enum",
+    "body": [
+      "// $1 $2.",
+      "type $1 string",
+      "",
+      "// $1s available.",
+      "const (",
+        "  $0",
+      ")",
+    ]
+  },
+
   "db": {
     "prefix": "db",
     "body": [
@@ -71,6 +84,13 @@
     "prefix": "d",
     "body": [
       "delete($1, \"$2\")"
+    ]
+  },
+
+  "Pretty Print": {
+    "prefix": "pp",
+    "body": [
+      "pretty.Print($0)",
     ]
   },
 
