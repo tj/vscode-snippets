@@ -1,4 +1,19 @@
 {
+  "params": {
+    "prefix": "params",
+    "body": [
+      "// $1Input params.",
+      "type $1Input struct {",
+      "  $0",
+      "}",
+      "",
+      "// $1Output params.",
+      "type $1Output struct {",
+      "  ",
+      "}"
+    ]
+  },
+
   "string enum": {
     "prefix": "string-enum",
     "body": [
