@@ -481,7 +481,7 @@
   "For Range": {
     "prefix": "fr",
     "body": [
-      "for _, $2 := range $1 {",
+      "for _, ${1:v} := range ${2:value} {",
       "  $0",
       "}"
     ]
