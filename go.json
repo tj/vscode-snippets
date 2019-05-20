@@ -26,6 +26,13 @@
       ")",
     ]
   },
+  
+  "defer": {
+    "prefix": "def",
+    "body": [
+      "defer func() { $0 }()"
+    ]
+  },
 
   "db": {
     "prefix": "db",
@@ -126,7 +133,7 @@
   "log.Fatalf": {
     "prefix": "fa",
     "body": [
-      "log.Fatalf(\"error: %s\\n\", ${0:err})"
+      "log.Fatalf(\"error$1: %s\\n\", ${0:err})"
     ]
   },
   
@@ -353,6 +360,13 @@
       "[]byte($1)"
     ]
   },
+
+  "Buffer": {
+    "prefix": "buf",
+    "body": [
+      "var buf bytes.Buffer"
+    ]
+  },
   
   "Main": {
     "prefix": "main",
@@ -385,7 +399,7 @@
   "Function Anonymous": {
     "prefix": "ff",
     "body": [
-      "func ($1) $2 {",
+      "func($1) $2 {",
       "  $0",
       "}"
     ]
@@ -420,6 +434,14 @@
     "prefix": "cb",
     "body": [
       "context.Background()"
+    ]
+  },
+
+  "Context WithTimeout": {
+    "prefix": "ct",
+    "body": [
+      "ctx, cancel := context.WithTimeout(context.Background(), $0)",
+      "defer cancel()"
     ]
   },
 
