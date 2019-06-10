@@ -1,16 +1,10 @@
 {
-  "params": {
-    "prefix": "params",
+  "sort": {
+    "prefix": "sort",
     "body": [
-      "// $1Input params.",
-      "type $1Input struct {",
+      "sort.Slice(${1:s}, func(i, j int) bool {",
       "  $0",
-      "}",
-      "",
-      "// $1Output params.",
-      "type $1Output struct {",
-      "  ",
-      "}"
+      "})"
     ]
   },
 
@@ -44,7 +38,7 @@
   "if": {
     "prefix": "if",
     "body": [
-      "if ${2:v}, ok := $1; ok {",
+      "if ${1:v}, ok := $2; ok {",
       "  $0",
       "}"
     ]
@@ -83,13 +77,6 @@
     "prefix": "le",
     "body": [
       "logs.WithError(err).Error(\"$1\")"
-    ]
-  },
-
-  "log info": {
-    "prefix": "li",
-    "body": [
-      "logs.Info(\"$1\")"
     ]
   },
 
@@ -148,13 +135,6 @@
     "prefix": "build",
     "body": [
       "// +build ${0:js}"
-    ]
-  },
-
-  "JS Value": {
-    "prefix": "va",
-    "body": [
-      "js.Value"
     ]
   },
 
@@ -559,15 +539,6 @@
       "t.Run(\"$1\", func(t *testing.T){",
       "  $0",
       "})"
-    ]
-  },
-
-  "VDOM Attributes": {
-    "prefix": "at",
-    "body": [
-      "vdom.Attributes{",
-      "  $0",
-      "}"
     ]
   }
 }
