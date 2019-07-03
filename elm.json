@@ -1,0 +1,133 @@
+{
+
+	"Comment": {
+		"prefix": "c",
+		"body": [
+			"{-| $0 -}"
+		]
+	},
+
+	"Single Line Comment": {
+		"prefix": "cc",
+		"body": [
+			"-- ${0:Heading}"
+		]
+	},
+
+	"Module": {
+		"prefix": "mo",
+		"body": [
+			"module ${1:Name} exposing (..)"
+		]
+	},
+
+	"Debug.log": {
+		"prefix": "d",
+		"body": [
+			"Debug.log \"${1:log}\" $1"
+		]
+	},
+
+	"Cmd.none": {
+		"prefix": "no",
+		"body": [
+			"Cmd.none"
+		]
+	},
+
+	"Element": {
+		"prefix": "e",
+		"body": [
+			"${1:div} [$2] [$0]"
+		]
+	},
+
+	"Type": {
+    "prefix": "t",
+    "body": [
+      "type ${1:Msg}",
+      "  = $0"
+    ]
+	},
+	
+	"type alias": {
+    "prefix": "ta",
+    "body": [
+      "type alias ${1:Model} = $0"
+    ]
+	},
+
+  "Exposing": {
+    "prefix": "ex",
+    "body": [
+      "exposing (${0:..})"
+    ]
+	},
+	
+	"Record Update": {
+		"prefix": "up",
+		"body": [
+			"{ ${1:model} | ${2:name} = ${0:name} }"
+		]
+	},
+
+	"Let / In": {
+		"prefix": "li",
+		"body": [
+			"let",
+			"    $0",
+			"in"
+		]
+	},
+
+	"Import": {
+		"prefix": "i",
+		"body": [
+			"import ${1:Name} "
+		]
+	},
+
+	"Import As": {
+		"prefix": "ia",
+		"body": [
+			"import ${1:Name} as $0"
+		]
+	},
+	
+	"Import Exposing": {
+		"prefix": "im",
+		"body": [
+			"import ${1:Name} exposing (${2:..})$0"
+		]
+	},
+
+	"Function": {
+		"prefix": "f",
+		"body": [
+			"${1:functionName} : ${2:ArgumentType} -> ${3:ReturnType}",
+			"${1:functionName} ${4:argumentName} =",
+			"    ${0:functionBody}"
+		]
+	},
+
+	"Maybe": {
+		"prefix": "m",
+		"body": [
+			"Maybe $0"
+		]
+	},
+
+	"Just": {
+		"prefix": "j",
+		"body": [
+			"Just $0"
+		]
+	},
+
+	"Nothing": {
+		"prefix": "n",
+		"body": [
+			"Nothing"
+		]
+	}
+}
