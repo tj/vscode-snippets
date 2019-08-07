@@ -1,4 +1,30 @@
 {
+	"To-Do": {
+		"prefix": "todo",
+		"body": [
+			"-- TODO: $1"
+		]
+	},
+	
+	"Forward Function Application": {
+		"prefix": "ff",
+		"body": ["|> "]
+	},
+
+	"Backward Function Application": {
+		"prefix": "bf",
+		"body": ["<| "]
+	},
+
+	"Html Msg": {
+		"prefix": "h",
+		"body": ["Html Msg"]
+	},
+
+	"Html msg": {
+		"prefix": "hm",
+		"body": ["Html msg"]
+	},
 
 	"Comment": {
 		"prefix": "c",
@@ -24,7 +50,7 @@
 	"Debug.log": {
 		"prefix": "d",
 		"body": [
-			"Debug.log \"${1:log}\" $1"
+			"Debug.log \"${1:msg}\" $1"
 		]
 	},
 
@@ -53,7 +79,8 @@
 	"type alias": {
     "prefix": "ta",
     "body": [
-      "type alias ${1:Model} = $0"
+      "type alias ${1:Model} =",
+      "  $0"
     ]
 	},
 
@@ -81,7 +108,7 @@
 	},
 
 	"Import": {
-		"prefix": "i",
+		"prefix": "im",
 		"body": [
 			"import ${1:Name} "
 		]
@@ -95,7 +122,7 @@
 	},
 	
 	"Import Exposing": {
-		"prefix": "im",
+		"prefix": "ie",
 		"body": [
 			"import ${1:Name} exposing (${2:..})$0"
 		]
@@ -107,6 +134,15 @@
 			"${1:functionName} : ${2:ArgumentType} -> ${3:ReturnType}",
 			"${1:functionName} ${4:argumentName} =",
 			"    ${0:functionBody}"
+		]
+	},
+
+	"Option Function": {
+		"prefix": "fo",
+		"body": [
+			"${1:functionName} : ${2:ArgumentType} -> Option",
+			"${1:functionName} v model =",
+			"    { model | ${3:${1:name}} = v }"
 		]
 	},
 
