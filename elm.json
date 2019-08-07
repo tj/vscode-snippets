@@ -5,26 +5,6 @@
 			"-- TODO: $1"
 		]
 	},
-	
-	"Forward Function Application": {
-		"prefix": "ff",
-		"body": ["|> "]
-	},
-
-	"Backward Function Application": {
-		"prefix": "bf",
-		"body": ["<| "]
-	},
-
-	"Html Msg": {
-		"prefix": "h",
-		"body": ["Html Msg"]
-	},
-
-	"Html msg": {
-		"prefix": "hm",
-		"body": ["Html msg"]
-	},
 
 	"Comment": {
 		"prefix": "c",
