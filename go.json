@@ -1,9 +1,18 @@
 {
+  "Slice Remove": {
+    "prefix": "sr",
+    "body": [
+      "${1:slice} = append(${1:slice}[:${2:index}], ${1:slice}[${2:index}+1:]...)"
+    ]
+  },
+
   "sort": {
     "prefix": "sort",
     "body": [
       "sort.Slice(${1:s}, func(i, j int) bool {",
-      "  $0",
+      "  a := $1[i]",
+      "  b := $1[j]",
+      "  return $0",
       "})"
     ]
   },
@@ -107,6 +116,13 @@
     "prefix": "p",
     "body": [
       "fmt.Printf(\"${1:%#v}\\n\", $0)"
+    ]
+  },
+
+  "fmt.Fprintf": {
+    "prefix": "pf",
+    "body": [
+      "fmt.Fprintf(w, \"${1:%s}\", $0)"
     ]
   },
 
@@ -484,6 +500,15 @@
     "prefix": "fr",
     "body": [
       "for _, ${1:v} := range ${2:value} {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "For Range Chan": {
+    "prefix": "frr",
+    "body": [
+      "for ${1:v} := range ${2:value} {",
       "  $0",
       "}"
     ]
