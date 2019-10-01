@@ -1,4 +1,11 @@
 {
+  "Case": {
+    "prefix": "ca",
+    "body": [
+      "case $1:"
+    ]
+  },
+
   "Slice Remove": {
     "prefix": "sr",
     "body": [
@@ -17,8 +24,23 @@
     ]
   },
 
+  "int enum": {
+    "prefix": "enum-int",
+    "body": [
+      "// $1 $2.",
+      "type $1 int",
+      "",
+      "// $1s available.",
+      "const (",
+        "  $1$3 $1 = iota",
+        "  $0",
+      ")",
+    ]
+  },
+  
+
   "string enum": {
-    "prefix": "string-enum",
+    "prefix": "enum-string",
     "body": [
       "// $1 $2.",
       "type $1 string",
