@@ -1,4 +1,20 @@
 {
+  "Goroutine": {
+    "prefix": "go",
+    "body": [
+      "go func(){",
+      "  $0",
+      "}()",
+    ]
+  },
+
+  "Empty Struct": {
+    "prefix": "es",
+    "body": [
+      "struct{}{}"
+    ]
+  },
+
   "Case": {
     "prefix": "ca",
     "body": [
