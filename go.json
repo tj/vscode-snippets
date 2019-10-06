@@ -1,4 +1,11 @@
 {
+  "Context Done": {
+    "prefix": "cd",
+    "body": [
+      "<-ctx.Done()"
+    ]
+  },
+
   "Goroutine": {
     "prefix": "go",
     "body": [
