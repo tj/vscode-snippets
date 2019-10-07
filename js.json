@@ -1,0 +1,114 @@
+{
+	"React Fragment": {
+		"prefix": "rf",
+		"body": [
+			"<React.Fragment>$0</React.Fragment>"
+		]
+	},
+	"Console Log": {
+		"prefix": "l",
+		"body": [
+			"console.log($0)"
+		]
+	},
+	"Destructure": {
+		"prefix": "d",
+		"body": [
+			"const { $1 } = $0"
+		]
+	},
+	"Try/Catch": {
+		"prefix": "try",
+		"body": [
+			"try {",
+			"  $1",
+			"} catch (err) {",
+			"  $0",
+			"}"
+		]
+	},
+	"To-Do": {
+		"prefix": "todo",
+		"body": [
+			"// TODO: $1"
+		]
+	},
+	"Comment": {
+		"prefix": "c",
+		"body": [
+			"/**",
+			" * $1.",
+			" */"
+		]
+	},
+	"Function": {
+		"prefix": "f",
+		"body": [
+			"/**",
+			" * $1 $2.",
+			" */",
+			"",
+			"function $1($3) {",
+			"  $0",
+			"}",
+		]
+	},
+	"Function Without Comment": {
+		"prefix": "ff",
+		"body": [
+			"function $1($2) {",
+			"  $0",
+			"}",
+		]
+	},
+	"Import": {
+		"prefix": "i",
+		"body": [
+			"import $1 from '${2:$1}'"
+		]
+	},
+	"Import Component": {
+		"prefix": "ic",
+		"body": [
+			"import $1 from './$1'"
+		]
+	},
+	"Import React": {
+		"prefix": "ir",
+		"body": [
+			"import React from 'react'"
+		]
+	},
+	"useState": {
+		"prefix": "us",
+		"body": [
+			"const [$1, $2] = useState($0)"
+		]
+	},
+	"useEffect": {
+		"prefix": "ue",
+		"body": [
+			"useEffect(_ => {",
+			"  $0",
+			"}, [$1])"
+		]
+	},
+	"Export Default": {
+		"prefix": "ed",
+		"body": [
+			"export default "
+		]
+	},
+	"Export Default Function": {
+		"prefix": "edf",
+		"body": [
+			"/**",
+			" * $1 $2.",
+			" */",
+			"",
+			"export default function $1($3) {",
+			"  $0",
+			"}"
+		]
+	}
+}
