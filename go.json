@@ -70,15 +70,17 @@
       "",
       "// $1s available.",
       "const (",
-        "  $0",
+      "  $0",
       ")",
     ]
   },
   
   "defer": {
-    "prefix": "def",
+    "prefix": "d",
     "body": [
-      "defer func() { $0 }()"
+      "defer func() {",
+      "  $0",
+      "}()"
     ]
   },
 
@@ -144,7 +146,7 @@
   },
 
   "delete": {
-    "prefix": "d",
+    "prefix": "de",
     "body": [
       "delete($1, \"$2\")"
     ]
