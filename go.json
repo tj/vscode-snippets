@@ -6,6 +6,43 @@
     ]
   },
 
+  "Context Error": {
+    "prefix": "ce",
+    "body": [
+      "ctx.Err()"
+    ]
+  },
+
+  "Context Argument": {
+    "prefix": "con",
+    "body": [
+      "ctx context.Context"
+    ]
+  },
+
+  "Context Background": {
+    "prefix": "cb",
+    "body": [
+      "context.Background()"
+    ]
+  },
+
+  "Context WithTimeout": {
+    "prefix": "ct",
+    "body": [
+      "ctx, cancel := context.WithTimeout(ctx, $0)",
+      "defer cancel()"
+    ]
+  },
+
+  "Context WithCancel": {
+    "prefix": "cc",
+    "body": [
+      "ctx, cancel := context.WithCancel(ctx)",
+      "defer cancel()"
+    ]
+  },
+
   "Goroutine": {
     "prefix": "go",
     "body": [
@@ -242,14 +279,10 @@
     ]
   },
 
-  "Method Chained": {
+  "Make Chan": {
     "prefix": "mc",
     "body": [
-      "// $3 ${4:implementation}.",
-      "func ($1 *$2) $3($5) $6 {",
-      "  $0",
-      "  return $1",
-      "}"
+      "make(chan ${0})"
     ]
   },
 
@@ -473,28 +506,6 @@
     ]
   },
 
-  "Context Argument": {
-    "prefix": "con",
-    "body": [
-      "ctx context.Context"
-    ]
-  },
-
-  "Context Background": {
-    "prefix": "cb",
-    "body": [
-      "context.Background()"
-    ]
-  },
-
-  "Context WithTimeout": {
-    "prefix": "ct",
-    "body": [
-      "ctx, cancel := context.WithTimeout(context.Background(), $0)",
-      "defer cancel()"
-    ]
-  },
-
   "Hex Dump Reader": {
     "prefix": "hdr",
     "body": [
@@ -587,6 +598,27 @@
       "    Config: c,",
       "  }",
       "}"
+    ]
+  },
+
+  "Context-Canceled Channel Send": {
+    "prefix": "cs",
+    "body": [
+      "select {",
+      "case $1 <- $0:",
+      "case <-ctx.Done():",
+      " return ctx.Err()",
+      "}",
+    ]
+  },
+
+  "Non-blocking Channel Send": {
+    "prefix": "nb",
+    "body": [
+      "select {",
+      "case $1 <- $0:",
+      "default:",
+      "}",
     ]
   },
 
