@@ -1,4 +1,11 @@
 {
+  "Close": {
+    "prefix": "cl",
+    "body": [
+      "close($0)"
+    ]
+  },
+
   "Context Done": {
     "prefix": "cd",
     "body": [
@@ -220,14 +227,14 @@
   "log.Printf": {
     "prefix": "l",
     "body": [
-      "log.Printf(\"${1:%v}\\n\", $0)"
+      "log.Printf(\"${1:%v}\", $0)"
     ]
   },
 
   "log.Fatalf": {
     "prefix": "fa",
     "body": [
-      "log.Fatalf(\"error$1: %s\\n\", ${0:err})"
+      "log.Fatalf(\"error$1: %s\", ${0:err})"
     ]
   },
   
