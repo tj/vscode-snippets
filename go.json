@@ -321,7 +321,7 @@
   "errors.As()": {
     "prefix": "as",
     "body": [
-      "var e {$1:*os.PathError}",
+      "var e ${1:*os.PathError}",
       "if errors.As(err, &e) {",
       "  $0",
       "}",
