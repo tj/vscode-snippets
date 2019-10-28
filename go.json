@@ -155,15 +155,17 @@
     "prefix": "options",
     "body": [
       "// Option function.",
-      "type Option func(*$1)",
+      "type Option func(*$1) error",
       "",
       "// New $2 with the given options.",
-      "func New(options ...Option) *$1 {",
+      "func New(options ...Option) (*$1, error) {",
       "  var v $1",
       "  for _, o := range options {",
-      "     o(&v)",
+      "     if err := o(&v); err != nil {",
+      "       return nil, err",
+      "     }",
       "  }",
-      "  return &v",
+      "  return &v, nil",
       "}"
     ]
   },
@@ -173,8 +175,9 @@
     "body": [
       "// With$1 $0.",
       "func With$1($2) Option {",
-      "  return func($3) {",
+      "  return func($3) error {",
       "    $4",
+      "    return nil",
       "  }",
       "}"
     ]
