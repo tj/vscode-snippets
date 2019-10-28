@@ -309,26 +309,38 @@
     ]
   },
 
-  "If Error Oneliner": {
-    "prefix": "ie",
+  "errors.Is()": {
+    "prefix": "is",
     "body": [
-      "if err := $1; err != nil {",
+      "if errors.Is(err, ${1:io.ErrUnexpectedEOF}) {",
       "  $0",
-      "}"
+      "}",
+    ]
+  },
+  
+  "errors.As()": {
+    "prefix": "as",
+    "body": [
+      "var e {$1:*os.PathError}",
+      "if errors.As(err, &e) {",
+      "  $0",
+      "}",
     ]
   },
 
   "Error Wrap": {
     "prefix": "ew",
     "body": [
-      "errors.Wrap(err, \"$0\")"
+      "fmt.Errorf(\"$1: %w\", err)"
     ]
   },
 
-  "Error Wrapf": {
-    "prefix": "ewf",
+  "If Error Oneliner": {
+    "prefix": "ie",
     "body": [
-      "errors.Wrapf(err, \"$1\", $0)"
+      "if err := $1; err != nil {",
+      "  $0",
+      "}"
     ]
   },
 
