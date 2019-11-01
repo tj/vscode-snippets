@@ -6,6 +6,13 @@
     ]
   },
 
+  "Default": {
+    "prefix": "def",
+    "body": [
+      "default:"
+    ]
+  },
+
   "Context Done": {
     "prefix": "cd",
     "body": [
@@ -470,6 +477,13 @@
     "prefix": "buf",
     "body": [
       "var buf bytes.Buffer"
+    ]
+  },
+
+  "strings.Builder": {
+    "prefix": "sb",
+    "body": [
+      "var w strings.Builder"
     ]
   },
   
