@@ -57,6 +57,25 @@
     ]
   },
 
+  "NewContext": {
+    "prefix": "nc",
+    "body": [
+      "// ${1:name}Key is a private context key.",
+      "type ${1:name}Key struct{}",
+      "",
+      "// New$3Context returns a new context with ${1:name}.",
+      "func New$3Context(ctx context.Context, v *${2:Type}) context.Context {",
+      "  return context.WithValue(ctx, ${1:name}Key{}, v)",
+      "}",
+      "",
+      "// $3FromContext returns ${1:name} from context.",
+      "func $3FromContext(ctx context.Context) (*${2:Type}, bool) {",
+      "  v, ok := ctx.Value(${1:name}Key{}).(*${2:Type})",
+      "  return v, ok",
+      "}",
+    ]
+  },
+
   "Goroutine": {
     "prefix": "go",
     "body": [
