@@ -1,4 +1,23 @@
 {
+  "Package": {
+    "prefix": "pa",
+    "body": [
+      "// Package $1 provides $2",
+      "package $1"
+    ]
+  },
+
+  "Main": {
+    "prefix": "main",
+    "body": [
+      "package main",
+      "",
+      "func main() {",
+      "  $0",
+      "}"
+    ]
+  },
+
   "Close": {
     "prefix": "cl",
     "body": [
@@ -247,7 +266,7 @@
   },
 
   "fmt.Fprintf": {
-    "prefix": "pf",
+    "prefix": "pf", 
     "body": [
       "fmt.Fprintf(w, \"${1:%s}\", $0)"
     ]
@@ -383,7 +402,7 @@
   "Return Error": {
     "prefix": "re",
     "body": [
-      "return err"
+      "return fmt.Errorf(\"$1: %w\", err)"
     ]
   },
 
@@ -506,15 +525,6 @@
     ]
   },
   
-  "Main": {
-    "prefix": "main",
-    "body": [
-      "func main(){",
-      "  $0",
-      "}"
-    ]
-  },
-
   "Init": {
     "prefix": "init",
     "body": [
