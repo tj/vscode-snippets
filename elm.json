@@ -30,14 +30,21 @@
 	"Debug.log": {
 		"prefix": "d",
 		"body": [
-			"Debug.log \"${1:msg}\" $1"
+			"Debug.log \"${1:msg}\" ${2:$1}"
 		]
 	},
 
 	"Cmd.none": {
-		"prefix": "no",
+		"prefix": "cn",
 		"body": [
 			"Cmd.none"
+		]
+	},
+
+	"Sub.none": {
+		"prefix": "sn",
+		"body": [
+			"Sub.none"
 		]
 	},
 
