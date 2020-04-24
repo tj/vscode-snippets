@@ -34,6 +34,13 @@
 		]
 	},
 
+	"Html Msg": {
+		"prefix": "hm",
+		"body": [
+			"Html Msg"
+		]
+	},
+
 	"Cmd.none": {
 		"prefix": "cn",
 		"body": [
@@ -120,6 +127,15 @@
 		"body": [
 			"${1:functionName} : ${2:ArgumentType} -> ${3:ReturnType}",
 			"${1:functionName} ${4:argumentName} =",
+			"    ${0:functionBody}"
+		]
+	},
+
+	"View Function": {
+		"prefix": "vf",
+		"body": [
+			"view${1:functionName} : ${2:ArgumentType} -> Html Msg",
+			"view${1:functionName} ${4:argumentName} =",
 			"    ${0:functionBody}"
 		]
 	},
