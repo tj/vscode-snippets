@@ -7,6 +7,18 @@
     ]
   },
 
+  "Switch": {
+    "prefix": "sw",
+    "body": [
+      "switch $1 {",
+      "  case $2:",
+      "    $0",
+      "  default:",
+      "    // TODO: implement",
+      "}",
+    ]
+  },
+
   "Main": {
     "prefix": "main",
     "body": [
@@ -290,6 +302,23 @@
     "prefix": "a",
     "body": [
       "$1 = append($1, $0)"
+    ]
+  },
+
+  "js.Value": {
+    "prefix": "j",
+    "body": [
+      "js.Value"
+    ]
+  },
+
+  "js.Func": {
+    "prefix": "jf",
+    "body": [
+      "js.FuncOf(func(this js.Value, args []js.Value) interface{} {",
+      "  $0",
+      "  return nil",
+      "})",
     ]
   },
 
