@@ -6,6 +6,15 @@
 		]
 	},
 
+	"Case": {
+		"prefix": "ca",
+		"body": [
+			"case $1 of",
+			"  $2 ->",
+			"    $0",
+		]
+	},
+
 	"Comment": {
 		"prefix": "c",
 		"body": [
@@ -30,7 +39,7 @@
 	"Debug.log": {
 		"prefix": "d",
 		"body": [
-			"Debug.log \"${1:msg}\" ${2:$1}"
+			"Debug.log \"${1:msg}\" $1"
 		]
 	},
 
@@ -93,18 +102,11 @@
 	},
 
 	"Let / In": {
-		"prefix": "li",
+		"prefix": "le",
 		"body": [
 			"let",
 			"    $0",
 			"in"
-		]
-	},
-
-	"Import": {
-		"prefix": "im",
-		"body": [
-			"import ${1:Name} "
 		]
 	},
 
@@ -116,7 +118,7 @@
 	},
 	
 	"Import Exposing": {
-		"prefix": "ie",
+		"prefix": "im",
 		"body": [
 			"import ${1:Name} exposing (${2:..})$0"
 		]
